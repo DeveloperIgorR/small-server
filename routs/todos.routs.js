@@ -1,11 +1,14 @@
 const express = require('express')
-const TasksControllers = require('./controllers/tasks.controller')
+const Tasks = require('../Tasks.js')
+
 const router = express.Router()
 
-router.post('/', (req,res) => {
+router.post('/', async (req,res) => {
     try {
-        const resData = await TasksControllers.setTasks(req.body)
-        res.json(resData)
+        const{title, completed} = req.body
+        const tasks = await Tasks.create({title, completed})
+        res.status(200).json('Ну и запросы у вас')
+        
     }
     catch (e) {
         console.log(e)        
