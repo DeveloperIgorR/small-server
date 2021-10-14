@@ -1,0 +1,5 @@
+class TasksServices{
+    static setTasks(){
+
+    }
+}
