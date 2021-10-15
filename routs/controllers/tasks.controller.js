@@ -5,7 +5,7 @@ class TasksControllers{
         try {
             const{title, completed} = req.body
             const tasks = await Tasks.create({title, completed})
-            res.json(tasks)
+            return res.json(tasks)
             
         }
         catch (e) {
@@ -37,9 +37,11 @@ class TasksControllers{
     async udate(req,res) {
         try {
             const task = req.body
-            const tasks = await Tasks.create({title, completed})
-            res.json(tasks)
-            
+            if(!task._id){
+                res.status(400).json({message: 'не указан id'})  
+            }
+            const updatedTask = await Tasks.findByIdAndUpdate(task._id, task, {new: true})
+            return res.json(updatedTask)            
         }
         catch (e) {
             res.status(500).json(e)        
@@ -47,10 +49,12 @@ class TasksControllers{
     }
     async delete(req,res) {
         try {
-            const{title, completed} = req.body
-            const tasks = await Tasks.create({title, completed})
-            res.json(tasks)
-            
+            const{id} = req.params
+            if(!id){
+                res.status(400).json({message: 'не указан id'})
+            }        
+            const task = await Tasks.findByIdAndDelete(id)
+            return res.json(task)            
         }
         catch (e) {
             res.status(500).json(e)        
