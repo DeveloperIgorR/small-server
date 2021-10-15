@@ -1,6 +1,6 @@
 const express = require('express')
 const Tasks = require('../Tasks.js')
-const TasksControllers = require('./controllers/tasks.controller.js')
+const TasksController = require('./controllers/tasks.controller.js')
 
 const router = express.Router()
 
