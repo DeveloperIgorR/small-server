@@ -1,6 +1,6 @@
 const Tasks = require("../../Tasks")
 
-class TasksControllers{
+class TasksController{
     async create(req,res) {
         try {
             const{title, completed} = req.body
@@ -62,4 +62,4 @@ class TasksControllers{
     }
 }
 
-module.exports = new TasksControllers
+module.exports = new TasksController

@@ -4,10 +4,10 @@ const TasksControllers = require('./controllers/tasks.controller.js')
 
 const router = express.Router()
 
-router.post('/create',TasksControllers.create)
-router.get('/',TasksControllers.getAll)
-router.get('/:id',TasksControllers.getOne)
-router.put('/update',TasksControllers.udate)
-router.delete('/delete/:id',TasksControllers.delete)
+router.post('/create',TasksController.create)
+router.get('/',TasksController.getAll)
+router.get('/:id',TasksController.getOne)
+router.put('/update',TasksController.udate)
+router.delete('/delete/:id',TasksController.delete)
 
 module.exports = router
