@@ -1,4 +1,5 @@
 const express = require('express')
+const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 
 
@@ -8,7 +9,7 @@ const app = express()
 
 const routes = require('./routs/index')
 
-app.use(express.json())
+app.use(bodyParser.json())
 app.use('/api',routes)
 
 async function startApp(){

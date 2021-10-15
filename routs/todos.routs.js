@@ -11,6 +11,8 @@ router.post('/', async (req,res) => {
         
     }
     catch (e) {
-        console.log(e)        
+        res.status(500).json(e)        
     }
 })
+
+module.exports = router
