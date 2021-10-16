@@ -1,5 +1,4 @@
 const TasksService = require("../services/tasks.service")
-const Tasks = require("../Tasks")
 
 class TasksController{
     async create(req,res) {
@@ -8,7 +7,7 @@ class TasksController{
             return res.json(tasks)            
         }
         catch (e) {
-            res.status(500).json(e)        
+            res.status(500).json(e.message)        
         }
     }
     async getAll(req,res) {
@@ -17,7 +16,7 @@ class TasksController{
             return res.json(tasks)            
         }
         catch (e) {
-            res.status(500).json(e)        
+            res.status(500).json(e.message)        
         }
     }
     async getOne(req,res) {
@@ -26,7 +25,7 @@ class TasksController{
             return res.json(tasks)            
         }
         catch (e) {
-            res.status(500).json(e)        
+            res.status(500).json(e.message)        
         }
     }
     async udate(req,res) {
@@ -35,7 +34,7 @@ class TasksController{
             return res.json(updatedTask)            
         }
         catch (e) {
-            res.status(500).json(e)        
+            res.status(500).json(e.message)        
         }
     }
     async delete(req,res) {
@@ -44,7 +43,7 @@ class TasksController{
             return res.json(task)            
         }
         catch (e) {
-            res.status(500).json(e)        
+            res.status(500).json(e.message)        
         }
     }
 }
