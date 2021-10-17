@@ -10,7 +10,6 @@ const app = express()
 const routes = require('./routs/index')
 
 app.use(bodyParser.json())
-app.use('/api',routes)
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header(
@@ -23,6 +22,7 @@ app.use(function (req, res, next) {
     );
     next();
   });
+app.use('/api',routes)
 
 async function startApp(){
     try {
