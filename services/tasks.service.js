@@ -20,11 +20,11 @@ class TasksService{
         return task         
     }
 
-    async udate(task) {        
-        if(!task._id){
+    async udate(id,task) {        
+        if(!id){
             throw new Error('не указан id') 
         }
-        const updatedTask = await Tasks.findByIdAndUpdate(task._id, task, {new: true})
+        const updatedTask = await Tasks.findByIdAndUpdate(id, task, {new: true})
         return updatedTask         
     }
 
