@@ -30,7 +30,10 @@ class TasksController{
     }
     async udate(req,res) {
         try {           
-            const updatedTask = await TasksService.udate(req.body)
+            const updatedTask = await TasksService.udate(
+                req.params.id,
+                req.body
+                )
             return res.json(updatedTask)            
         }
         catch (e) {
