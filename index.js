@@ -1,13 +1,30 @@
 const express = require('express')
-const bodyParser = require('body-parser')
-const mongoose = require('mongoose')
+const app = express()
 require('dotenv').config()
 const port = process.env.PORT || 3000
+const bodyParser = require('body-parser')
+
+const mongoose = require('mongoose')
 
 const DB_URL = `mongodb+srv://user:user@cluster0.i5vcb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
-const app = express()
+
 
 const routes = require('./routs/index')
+const swaggerJsDoc = require('swagger-jsdoc')
+const swaggerUi = require('swagger-ui-express')
+const swaggerOptions = {
+  swaggerDefinition: {
+    info: {
+      title: 'API',
+      description: 'Track Your Progress API',
+      servers: ['http://localhost:5000'],
+      version: '1.0.1',
+    },
+  },
+  apis: ['./routes/*.js'],
+}
+const swaggerDocs = swaggerJsDoc(swaggerOptions)
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs))
 
 app.use(bodyParser.json())
 app.use(function (req, res, next) {
@@ -35,3 +52,5 @@ async function startApp(){
 }
 
 startApp()
+
+module.exports = app
