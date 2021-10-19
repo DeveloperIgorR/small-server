@@ -41,7 +41,7 @@ router.get('/:id',TasksController.getOne)
 
 /**
  * @swagger
- *  /api/todos:
+ *  /api/todos/create:
  *    post:
  *      summary: Add new task
  *      description:
@@ -87,7 +87,7 @@ router.post('/create',TasksController.create)
 
 /**
  * @swagger
- * /api/todos/{id}:
+ * /api/todos/update/{id}:
  *  put:
  *      summary: Updates a task with {id}
  *      tags:
@@ -114,7 +114,7 @@ router.put('/update/:id',TasksController.update)
 
 /**
  * @swagger
- * /api/todos/{id}:
+ * /api/todos/delete/{id}:
  *  delete:
  *      summary: Delete task with {id}
  *      tags:
