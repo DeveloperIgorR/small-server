@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
-const todosRouts = require('./todos.routs')
+const todosRoutes = require('./todos.routes')
 
-router.use('/todos', todosRouts)
+router.use('/todos', todosRoutes)
 
 module.exports = router

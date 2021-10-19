@@ -9,7 +9,7 @@ const mongoose = require('mongoose')
 const DB_URL = `mongodb+srv://user:user@cluster0.i5vcb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
 
 
-const routes = require('./routs/index')
+const routes = require('./routes/index')
 const swaggerJsDoc = require('swagger-jsdoc')
 const swaggerUi = require('swagger-ui-express')
 const swaggerOptions = {

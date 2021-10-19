@@ -6,8 +6,8 @@ const TasksController = require('../controllers/tasks.controller.js')
  * @swagger
  * /api/todos:
  *  get:
- *      summary: Get all users
- *      description: Returns all users from DB
+ *      summary: Get all tasks
+ *      description: Returns all tasks from DB
  *      tags:
  *          - Tasks
  *      responses:
