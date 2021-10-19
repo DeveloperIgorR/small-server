@@ -28,9 +28,9 @@ class TasksController{
             res.status(500).json(e.message)        
         }
     }
-    async udate(req,res) {
+    async update(req,res) {
         try {           
-            const updatedTask = await TasksService.udate(
+            const updatedTask = await TasksService.update(
                 req.params.id,
                 req.body
                 )

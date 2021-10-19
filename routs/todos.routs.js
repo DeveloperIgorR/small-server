@@ -7,7 +7,7 @@ const router = express.Router()
 router.post('/create',TasksController.create)
 router.get('/',TasksController.getAll)
 router.get('/:id',TasksController.getOne)
-router.put('/update/:id',TasksController.udate)
+router.put('/update/:id',TasksController.update)
 router.delete('/delete/:id',TasksController.delete)
 
 module.exports = router

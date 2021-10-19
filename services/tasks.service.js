@@ -20,7 +20,7 @@ class TasksService{
         return task         
     }
 
-    async udate(id,task) {        
+    async update(id,task) {        
         if(!id){
             throw new Error('не указан id') 
         }
